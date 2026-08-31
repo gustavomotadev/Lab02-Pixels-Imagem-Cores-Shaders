@@ -7,25 +7,15 @@
 2. Mostrar como se dá a geração de imagens a partir de *shaders*;
 3. Utilizar os conceitos vistos em aula em exercícios práticos. 
 
-## Lembrando mais uma vez...
-
-É preciso:
-
-1. Baixar o repositório [*Assets*](https://github.com/aapolinariojr/Assets) na máquina local;
-2. Ter a extensão [*Live-server*](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) instalada no [Visual Studio Code -VSCode](https://code.visualstudio.com/docs/setup/setup-overview?originUrl=%2Fdocs);
-3. Mapear o diretório *Assets* pelo *Live-Server* ou localizado dentro do diretório raiz do *web-server*.
-
-Veja o Lab 01 para maiores detalhes.
-
 ## Antes de começar:
 
-Para rodar os *shaders* desse Lab voce deve instalar no **VS Code** a extensão [**Shader Toy extension**](https://marketplace.visualstudio.com/items?itemName=stevensona.shader-toy) by stevensona.
+Para rodar os *shaders* desse Lab, você deve instalar no **VS Code** a extensão [**Shader Toy extension**](https://marketplace.visualstudio.com/items?itemName=stevensona.shader-toy) by stevensona.
 
 Analise com cuidado os códigos fornecidos nesse Laboratório. 
 
 Consulte [1] para entender como funcionam os sistemas de cores **RGB** e **HSL**; 
 
-Em [3] voce encontra um resumo do objeto *Color* e com as cores são representadas no *Three.JS*;
+Em [3] você encontra um resumo do objeto *Color* e como as cores são representadas no *Three.JS*;
 
 ## Exercícios:
 
@@ -33,9 +23,9 @@ Em [3] voce encontra um resumo do objeto *Color* e com as cores são representad
 
 <img src="./imgs/Plasma.gif" width=250>
 
-*Figura 1 - Padrão de cores muda ao longo do espaço 2D e do tempo.*
+*Figura 1 - O padrão de cores muda ao longo do espaço 2D e do tempo.*
 
-2. Codifique um *shader* que crie um padrão de cores como o da Figura 2, onde cada quadrante possui uma cor distinta.
+2. Codifique um *shader* que crie um padrão de cores como o da Figura 2, em que cada quadrante possui uma cor distinta.
 
 <img src="./imgs/Quadrantes.png" width=250>  
 
@@ -47,29 +37,29 @@ Em [3] voce encontra um resumo do objeto *Color* e com as cores são representad
 
 *Figura 3 - Quadrantes com padrões de suavização.*
 
-4. Codifique um *shader* que desenhe uma reta, a partir da identificação das regiões acima e abaixo da reta, como mostra a Figura 4. Parametrize a equação da reta de modo que qualquer reta possa ser visualizada. Cuidado com casos particulares.
+4. Codifique um *shader* que desenhe uma reta, a partir da identificação das regiões acima e abaixo da reta, como mostra a Figura 4. Parametrize a equação da reta de modo que qualquer reta possa ser representada. Cuidado com casos particulares.
 
 <img src="./imgs/Reta.png" width=250> 
 
-*Figura 4 - Uma reta onde os pontos abaixo da reta são vermelhos e os acima são azuis.*
+*Figura 4 - Uma reta em que os pontos abaixo dela são vermelhos e os acima, azuis.*
 
-5. Desenvolva um *shader* para desenhar um circulo com da Figura 5 à esquerda. Depois modifique esse *shader* para que ele possa destacar os pontos na fronteira do circulo, como mostra a Figura 2 à direita. 
+5. Desenvolva um *shader* para desenhar o círculo da Figura 5 à esquerda. Depois, modifique esse *shader* para que destaque os pontos na fronteira do círculo, como mostra a Figura 2 à direita. 
 
 <img src="./imgs/Circulo.png" width=250> <img src="./imgs/Circulo-Com-Borda.png" width=250>
 
-*Figura 5 - Um circulo onde os pontos internos são vermelhos e os externos azuis (à esquerda) e com destaque da borda em branco (à direita).*
+*Figura 5 - Um círculo em que os pontos internos são vermelhos e os externos azuis (à esquerda), com destaque da borda em branco (à direita).*
 
-6. Para definir um circulo "clássico" utilizamos a métrica **Euclidiana** para medir a distancia dos pontos do espaço 2D ao centro do circulo. Outras métricas podem ser utilizadas, gerando formas diferentes. Pesquise que sobre as métricas [Manhattan](https://en.wikipedia.org/wiki/Taxicab_geometry), [Chebyshev](https://en.wikipedia.org/wiki/Chebyshev_distance) e [Minkowski](https://en.wikipedia.org/wiki/Minkowski_distance) e aplicando-as gere as formas da Figura 6.  
+6. Para definir um círculo "clássico" utilizamos a métrica **Euclidiana** para medir a distância dos pontos do espaço 2D ao centro do círculo. Outras métricas podem ser utilizadas, gerando formas diferentes. Pesquise sobre as métricas [Manhattan](https://en.wikipedia.org/wiki/Taxicab_geometry), [Chebyshev](https://en.wikipedia.org/wiki/Chebyshev_distance) e [Minkowski](https://en.wikipedia.org/wiki/Minkowski_distance) e, aplicando-as, gere as formas da Figura 6.  
 
 <img src="./imgs/Circulo-Manhattan.png" width=250> <img src="./imgs/Circulo-Chebyshev.png" width=250> <img src="./imgs/Circulo-Minkowski.gif" width=250>
 
 *Figura 6 - Um círculo definido pelas métricas de distância Manhattan, Chebyshev e Minkowski*
 
-7. Crie um *shader* capaz de desenhar um circulo variando seu tamanho ou posição ao longo do tempo, como os exemplos da Figura 7.  
+7. Crie um *shader* capaz de desenhar um círculo, variando seu tamanho ou sua posição ao longo do tempo, como nos exemplos da Figura 7.  
 
 <img src="./imgs/Circulo-Pulso.gif" width=250> <img src="./imgs/Circulo-Girando.gif" width=250> 
 
-*Figura 7 - Um círculo com raio (à esquerda) e posição (à direita) variando no tempo.*
+*Figura 7 - Um círculo com raio (à esquerda) e posição (à direita) variando ao longo do tempo.*
 
 8. Desenvolva um *shader* capaz de mapear as cores do sistema [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) no plano 2D e em um círculo, como mostra a Figura 8. 
 
@@ -77,17 +67,17 @@ Em [3] voce encontra um resumo do objeto *Color* e com as cores são representad
 
 *Figura 8 - Cores do sistema HSL visualizadas em um quadrado e em um círculo.*
 
-9. Crie um *shader* que permita mostrar, na mesma tela, uma imagem original e seus 3 canais de cor. .
+9. Crie um *shader* que permita exibir, na mesma tela, uma imagem original e seus 3 canais de cor.
 
-10. Altere o *shader* do exercicio anterior para mostrar uma imagem com seus 3 canais de cor porém agora representados no sistema HSL[4]. 
+10. Altere o *shader* do exercício anterior para exibir uma imagem com seus 3 canais de cor, agora representados no sistema HSL[4]. 
 
-11. Desenvolva um *shader* que aplique a **transformação de binarização** em uma imagem. 
+11. Desenvolva um *shader* que aplique a **transformação de binarização** a uma imagem. 
 
-12. Crie um *shader* que aplique a **transformação negativa** em uma imagem. Experimente aplicar essa transformação em cada canal de cor separadamente e simultaneamente. Utilize o mecanismo de animação apresentado no exemplo *02-Cores* para facilitar a analise dos resultados. 
+12. Crie um *shader* que aplique a **transformação negativa** a uma imagem. Experimente aplicar essa transformação a cada canal de cor, tanto separadamente quanto simultaneamente. Utilize o mecanismo de animação apresentado no exemplo *02-Cores* para facilitar a análise dos resultados. 
 
-13. Desenvolva *shaders* para aplicar as **transformações log e gama** nos canais de cor de uma imagem. Teste o que ocorre com as imagens quando essas transformações são aplicadas em canais de cores RGB independentes ou conjugados. 
+13. Desenvolva *shaders* para aplicar as **transformações log e gama** nos canais de cor de uma imagem. Teste o que ocorre com as imagens quando essas transformações são aplicadas aos canais de cor RGB independentes ou conjugados. 
 
-14. Modifique o exercício anterior para que as transformações sejam aplicadas apenas no canal de luminosidade da imagem (considerando sua representação em HSL). Após a transformação o valor do pixel deve ser convertido novamente para a representação RGB [4] para ser apresentado. 
+14. Modifique o exercício anterior para que as transformações sejam aplicadas apenas no canal de luminosidade da imagem (considerando sua representação em HSL). Após a transformação, o valor do pixel deve ser convertido novamente para a representação RGB [4] para apresentação. 
 
 15. A partir do exemplo *12-filtragem-espacial* experimente modificar os pesos para criar *kernels* relacionados com outras operações abordadas em sala de aula.   
 
