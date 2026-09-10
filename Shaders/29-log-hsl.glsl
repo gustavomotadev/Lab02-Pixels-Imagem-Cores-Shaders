@@ -32,6 +32,11 @@ vec3 rgb2hsl(vec3 c) {
     return vec3(h, s, l);
 }
 
+float logBaseB( in float x, in float b) {
+
+    return log(x) / log(b);
+}
+
 void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 
     float minRes = min(iResolution.x, iResolution.y);
@@ -45,10 +50,10 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
         step(0.0, uv.x) *
         step(0.0, uv.y));
 
-    float gamma = (sin(iTime) + 1.0) * 2.5;
+    float base = (sin(iTime*1.5) + 1.0) * 5.0 + 1.1;
 
     vec3 hsl = rgb2hsl(textureColor.rgb);
-    hsl.z = pow(hsl.z, gamma);
+    hsl.z = logBaseB(1.0 + hsl.z, base);
 
     fragColor = vec4(hsl2rgb(hsl), 1.0) * letterbox;
 
