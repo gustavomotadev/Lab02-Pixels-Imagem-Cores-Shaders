@@ -18,11 +18,17 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
         step(0.0, uv.x) *
         step(0.0, uv.y));
 
-    float base = (sin(iTime*1.5) + 1.0) * 15.0 + 1.1;
+    float base = (sin(iTime*1.5) + 1.0) * 5.0 + 1.1;
 
-    fragColor = vec4(vec3(logBaseB(1.0 + textureColor.r, base), 
-        logBaseB(1.0 + textureColor.g, base), 
-        logBaseB(1.0 + textureColor.b, base)), 
+    float time = iTime * 1.5;
+    float deg120 = 3.14159*0.66666;
+    float deg240 = 3.14159*1.33333;
+
+    vec3 bases = ((vec3(sin(time), sin(time + deg120), sin(time + deg240)) + 1.0) * 5.0) + 1.1;
+
+    fragColor = vec4(vec3(logBaseB(1.0 + textureColor.r, bases.x), 
+        logBaseB(1.0 + textureColor.g, bases.y), 
+        logBaseB(1.0 + textureColor.b, bases.z)), 
         1.0) * 
         letterbox;
 
