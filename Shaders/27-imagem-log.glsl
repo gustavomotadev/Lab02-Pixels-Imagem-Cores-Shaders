@@ -1,5 +1,10 @@
 #iChannel0 "file://imagens/mandrill.png"
 
+float logBaseB( in float x, in float b) {
+
+    return log(x) / log(b);
+}
+
 void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
 
     float minRes = min(iResolution.x, iResolution.y);
@@ -13,8 +18,12 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord ) {
         step(0.0, uv.x) *
         step(0.0, uv.y));
 
-    float gamma = (sin(iTime) + 1.0) * 1.5;
+    float base = (sin(iTime*1.5) + 1.0) * 15.0 + 1.1;
 
-    fragColor = vec4(pow(textureColor.rgb, vec3(gamma)), 1.0) * letterbox;
+    fragColor = vec4(vec3(logBaseB(1.0 + textureColor.r, base), 
+        logBaseB(1.0 + textureColor.g, base), 
+        logBaseB(1.0 + textureColor.b, base)), 
+        1.0) * 
+        letterbox;
 
 }
